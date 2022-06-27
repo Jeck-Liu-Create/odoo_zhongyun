@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_demo_odoo_tutorial">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Odoo Report</h2>
+                        <div>
+                            <strong>Name:</strong>
+                            <p t-field="o.name"/>
+                        </div>
+                        <div>
+                            <strong>Name_track_always:</strong>
+                            <p t-field="o.name_track_always"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_demo" model="ir.actions.report">
+        <field name="name">Demo Report</field>
+        <field name="model">demo.odoo.tutorial</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">demo_odoo_tutorial.report_demo_odoo_tutorial</field>
+        <field name="report_file">demo_odoo_tutorial.report_demo_odoo_tutorial</field>
+        <field name="print_report_name">'Demo Report - %s' % ((object.name).replace('/', ''))</field>
+        <!-- <field name="binding_model_id" ref="model_hr_expense_sheet"/>
+        <field name="binding_type">report</field> -->
+    </record>
+
+</odoo>
