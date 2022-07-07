@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- demo_prototype_tutorial App Menu -->
+    <menuitem id="demo_prototype_tutorial_menu"
+              name="Demo Prototype Tutorial" />
+
+    <!-- Action to open the demo_prototype_tutorial -->
+    <record id="action_demo_prototype_tutorial" model="ir.actions.act_window">
+        <field name="name">Demo Prototype Tutorial Action</field>
+        <field name="res_model">demo.prototype</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu item to open the demo_prototype_tutorial -->
+    <menuitem id="menu_demo_prototype_tutorial"
+              name="Demo Prototype Tutorial"
+	          action="action_demo_prototype_tutorial"
+              parent="demo_prototype_tutorial_menu" />
+</odoo>
+
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_wizard_template">
+        <t t-call="web.html_container">
+            <div class="header">
+                <h3 class="text-center">Expense Wizard Report</h3>
+                <h4 class="text-center">
+                    <strong>From</strong>:
+                    <t t-esc="date_start"/>
+                    <strong>To</strong>:
+                    <t t-esc="date_end"/>
+                </h4>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Date</th>
+                        <th class="text-center">Unit_amount</th>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td>
+                                    <span t-esc="doc['name']"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="doc['date']"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="doc['unit_amount']"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <record id="action_report_abstractmodel" model="ir.actions.report">
+        <field name="name">Demo Report</field>
+        <field name="model">report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">demo_abstractmodel_tutorial.report_wizard_template</field>
+        <field name="report_file">demo_abstractmodel_tutorial.report_wizard_template</field>
+        <field name="print_report_name">Demo Report</field>
+    </record>
+
+</odoo>

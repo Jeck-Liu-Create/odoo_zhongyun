@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Demo Sequence Menu -->
+    <menuitem id="demo_sequence_menu"
+      name="Demo Sequence" />
+
+    <!-- Action to open the demo_sequence list -->
+    <record id="action_demo_sequence" model="ir.actions.act_window">
+        <field name="name">Demo Sequence</field>
+        <field name="res_model">demo.sequence</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu item to open the demo_sequence list -->
+    <menuitem id="menu_demo_sequence"
+      name="Demo Sequence"
+	    action="action_demo_sequence"
+      parent="demo_sequence_menu" />
+</odoo>
+
+

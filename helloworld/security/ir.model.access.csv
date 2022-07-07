@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-acl_helloworld_greeting_default,helloworld.greeting_default,model_helloworld_greeting,,1,1,1,1
