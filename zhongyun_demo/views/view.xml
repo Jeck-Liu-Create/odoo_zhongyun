@@ -3,21 +3,29 @@
 
   <record id="view_form_zy_statistics" model="ir.ui.view">
     <field name="name">中运物流-统计</field>
-    <field name="model">demo.odoo.tutorial</field>
+    <field name="model">zy.statistics</field>
     <field name="arch" type="xml">
-      <form string="Demo Odoo Tutorial">
+      <form string="中运物流-统计">
         <sheet>
           <group>
-            <field name="name"/>
-            <field name="name_track_always"/>
-            <field name="is_done_track_onchange"/>
-            <field name="start_datetime"/>
-            <field name="stop_datetime"/>
-            <field name="field_onchange_demo"/>
-            <field name="field_onchange_demo_set" force_save="1"/>
-            <field name="input_number"/>
-            <field name="field_compute_demo"/>
+            <field name="document_sequence"/>
+            <field name="transport_material_name"/>
+            <field name="supplier"/>
+            <field name="delivery_date"/>
+            <field name="manufacture_date"/>
+            <field name="net_weight"/>
+            <field name="primary_weight"/>
           </group>
+          <group>
+            <field name="transport_company"/>
+            <field name="delivery_location"/>
+            <field name="port_shipment"/>
+            <field name="stop_shipment"/>
+            <field name="fuel_car_number"/>
+            <field name="electric_car_transport_company"/>
+            <field name="is_done_track_onchange"/>
+          </group>
+          <field name="remarke">
         </sheet>
         <div class="oe_chatter">
           <field name="message_follower_ids" widget="mail_followers"/>
@@ -29,15 +37,16 @@
   </record>
 
   <record id="view_tree_demo_odoo_tutorial" model="ir.ui.view">
-    <field name="name">Demo Odoo Tutorial List</field>
-    <field name="model">demo.odoo.tutorial</field>
+    <field name="name">统计表</field>
+    <field name="model">zy.statistics</field>
     <field name="arch" type="xml">
       <tree>
-        <field name="name"/>
-        <field name="name_track_always"/>
-        <field name="is_done_track_onchange"/>
-        <field name="start_datetime"/>
-        <field name="stop_datetime"/>
+        <field name="document_sequence"/>
+        <field name="transport_material_name"/>
+        <field name="net_weight"/>
+        <field name="primary_weight"/>
+        <field name="delivery_date"/>
+        <field name="manufacture_date"/>
       </tree>
     </field>
   </record>
