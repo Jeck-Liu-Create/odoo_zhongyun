@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- zy_statistics App Menu -->
+    <menuitem id="zy_statistics_menu"
+              name="中运物流-统计" />
+
+    <!-- Action to open the zy_statistics -->
+    <record id="action_zy_statistics" model="ir.actions.act_window">
+        <field name="name">中运物流统计业务</field>
+        <field name="res_model">zy.statisics</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu item to open the zy_statistics -->
+    <menuitem id="menu_zy_statistics"
+              name="中运物流-统计"
+	            action="action_zy_statistics"
+              parent="zy_statistics_menu" />
+</odoo>
+
+

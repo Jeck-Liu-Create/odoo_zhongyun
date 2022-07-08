@@ -1,0 +1,22 @@
+  <record id="module_zy_statistics" model="ir.module.category">
+    <field name="name">中运物流-统计业务</field>
+  </record>
+
+  <record id="zy_statistics_group_user" model="res.groups">
+    <field name="name">用户</field>
+    <field name="category_id"
+           ref="module_zy_statistics"/>
+    <field name="implied_ids"
+           eval="[(4, ref('base.group_user'))]"/>
+  </record>
+
+  <record id="zy_statistics_group_manager" model="res.groups">
+    <field name="name">管理员</field>
+    <field name="category_id"
+           ref="module_zy_statistics"/>
+    <field name="implied_ids"
+           eval="[(4, ref('zy_statistics_group_user'))]"/>
+    <field name="users"
+           eval="[(4, ref('base.user_root')),
+                  (4, ref('base.user_admin'))]"/>
+  </record>
